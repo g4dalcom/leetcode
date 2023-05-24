@@ -1,14 +1,14 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-        int cnt = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == val) {
-                nums[i] = 51;
-                cnt++;
+        int k = 0;
+        
+        for (int num: nums) {
+            if (num != val) {
+                nums[k] = num;
+                k++;
             }
         }
         
-        Arrays.sort(nums);
-        return nums.length - cnt;
+        return k;
     }
 }
